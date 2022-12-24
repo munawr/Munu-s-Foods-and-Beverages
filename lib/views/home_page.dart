@@ -38,23 +38,22 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: ('Home'),
-                backgroundColor: Colors.red),
+                backgroundColor: Colors.grey),
             BottomNavigationBarItem(
                 icon: Icon(Icons.menu),
                 label: ('Menu'),
-                backgroundColor: Colors.blue),
+                backgroundColor: Colors.grey),
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
               label: ('Search'),
-              backgroundColor: Color.fromARGB(255, 20, 95, 22),
+              backgroundColor: Colors.grey,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_box),
               label: ('Account'),
-              backgroundColor: Color.fromARGB(255, 241, 218, 17),
+              backgroundColor: Colors.grey,
             ),
           ],
-          type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,
           iconSize: 40,
