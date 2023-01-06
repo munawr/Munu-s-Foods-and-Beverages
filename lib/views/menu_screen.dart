@@ -1,16 +1,67 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import '../services/categories_service.dart';
 
-class MenuScreen extends StatefulWidget {
-  const MenuScreen({super.key});
+class Categories extends StatefulWidget {
+  const Categories({super.key});
 
   @override
-  State<MenuScreen> createState() => _MenuScreenState();
+  State<Categories> createState() => _CategoriesState();
 }
 
-class _MenuScreenState extends State<MenuScreen> {
+class _CategoriesState extends State<Categories> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: FutureBuilder(
+        future: CategoryService().getCategories(),
+        initialData: null,
+        builder: (c, s) {
+          if (s.hasData) {
+            return DefaultTabController(
+              length: s.data!.data!.length,
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    TabBar(
+                      isScrollable: true,
+                      tabs: List.generate(
+                        s.data!.data!.length,
+                        (index) => Text(
+                          s.data!.data![index].catName.toString(),
+                          style: TextStyle(color: Colors.blue),
+                          selectionColor: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    TabBarView(
+                      controller: s.data!.data!.length,
+                      children: List.generate(
+                        s.data!.data!.length,
+                        (index) => Center(
+                          child: Image.network(
+                            s.data!.data![index].catImg.toString(),
+                            color: Colors.grey,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+    );
   }
 }
