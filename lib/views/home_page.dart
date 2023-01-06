@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_application/views/hom_newlist.dart';
+
+import 'home_list.dart';
+import 'menu_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -12,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = const <Widget>[
     HomeList(),
-    Text('Menu Page'),
+    Categories(),
     Text('Search Page'),
     Text('Account Page'),
   ];

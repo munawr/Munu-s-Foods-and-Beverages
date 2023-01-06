@@ -10,11 +10,6 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
@@ -33,20 +28,20 @@ class _CategoriesState extends State<Categories> {
                         s.data!.data!.length,
                         (index) => Text(
                           s.data!.data![index].catName.toString(),
-                          style: TextStyle(color: Colors.blue),
+                          style: const TextStyle(color: Colors.black),
                           selectionColor: Colors.blue,
                         ),
                       ),
                     ),
-                    TabBarView(
-                      controller: s.data!.data!.length,
-                      children: List.generate(
-                        s.data!.data!.length,
-                        (index) => Center(
-                          child: Image.network(
-                            s.data!.data![index].catImg.toString(),
-                            color: Colors.grey,
-                            fit: BoxFit.fill,
+                    Expanded(
+                      child: TabBarView(
+                        children: List.generate(
+                          s.data!.data!.length,
+                          (index) => Center(
+                            child: Image.network(
+                              s.data!.data![index].catImg.toString(),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                       ),
