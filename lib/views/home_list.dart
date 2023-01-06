@@ -1,31 +1,35 @@
-import 'package:flutter/material.dart';
-import 'package:shopping_application/services/home_service.dart';
+// import 'dart:convert';
 
-import '../models/home_model.dart';
+// import 'package:flutter/material.dart';
+// import 'package:http/http.dart';
+// import 'package:shopping_application/services/home_service.dart';
 
-class HomeList extends StatefulWidget {
-  const HomeList({super.key});
+// import '../models/home_model.dart';
 
-  @override
-  State<HomeList> createState() => _HomeListState();
-}
+// class HomeList extends StatefulWidget {
+//   const HomeList({super.key});
 
-class _HomeListState extends State<HomeList> {
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: FutureBuilder<Home?>(
-          future: HomeService().getHome(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Text(snapshot.data!.data!.sliderBanners.toString());
-            } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
-            }
-            return const CircularProgressIndicator();
-          },
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   State<HomeList> createState() => _HomeListState();
+// }
+
+// class _HomeListState extends State<HomeList> {
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: FutureBuilder<Home?>(
+//           future: HomeService().getHome(),
+//           builder: (context, snapshot) {
+//             if (snapshot.hasData) {
+//               var users = Data.fromJson(json);
+//               // return image.NetworkImage.data!.data!.FeaturedProducts.image;
+//             } else if (snapshot.hasError) {
+//               return Text('${snapshot.error}');
+//             }
+//             return const CircularProgressIndicator();
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }

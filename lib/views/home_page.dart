@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_list.dart';
+import 'package:shopping_application/views/hom_newlist.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -27,36 +26,39 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-          title: const Text('Flutter BottomNavigationBar Example'),
-          backgroundColor: Colors.grey),
+          elevation: 0,
+          title: const Text("Let's Shop"),
+          backgroundColor: Colors.grey.withOpacity(.6)),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: const Icon(Icons.home_filled),
                 label: ('Home'),
-                backgroundColor: Colors.grey),
+                backgroundColor: Colors.grey.shade200),
             BottomNavigationBarItem(
-                icon: Icon(Icons.menu),
+                icon: const Icon(Icons.menu_book_rounded),
                 label: ('Menu'),
-                backgroundColor: Colors.grey),
+                backgroundColor: Colors.grey.shade200),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search_rounded),
               label: ('Search'),
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey.shade200,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
+              icon: const Icon(Icons.person),
               label: ('Account'),
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.grey.shade200,
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.black,
-          iconSize: 40,
+          selectedItemColor: Colors.blueGrey,
+          unselectedItemColor: Colors.blueGrey.shade200,
+          iconSize: 25,
           onTap: _onItemTapped,
           elevation: 5),
     );

@@ -80,14 +80,14 @@ class Data {
   }
 }
 
-class AdditionalBanners {
+class SliderBanners {
   int? id;
   String? bannerOrder;
   String? bannerImg;
 
-  AdditionalBanners({this.id, this.bannerOrder, this.bannerImg});
+  SliderBanners({this.id, this.bannerOrder, this.bannerImg});
 
-  AdditionalBanners.fromJson(Map<String, dynamic> json) {
+  SliderBanners.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     bannerOrder = json['banner_order'];
     bannerImg = json['banner_img'];
@@ -102,14 +102,14 @@ class AdditionalBanners {
   }
 }
 
-class SliderBanners {
+class AdditionalBanners {
   int? id;
   String? bannerOrder;
   String? bannerImg;
 
-  SliderBanners({this.id, this.bannerOrder, this.bannerImg});
+  AdditionalBanners({this.id, this.bannerOrder, this.bannerImg});
 
-  SliderBanners.fromJson(Map<String, dynamic> json) {
+  AdditionalBanners.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     bannerOrder = json['banner_order'];
     bannerImg = json['banner_img'];
@@ -163,7 +163,7 @@ class FeaturedProducts {
     isVeg = json['is_veg'];
     description = json['description'];
     price = json['price'];
-    specialPrice = json['special_price'];
+    specialPrice = json['special_price'].toString();
     availableFrom = json['available_from'];
     availableTo = json['available_to'];
     image = json['image'];
@@ -200,7 +200,7 @@ class Variations {
   int? id;
   String? title;
   String? price;
-  int? specialPrice;
+  String? specialPrice;
 
   Variations({this.id, this.title, this.price, this.specialPrice});
 
@@ -208,7 +208,7 @@ class Variations {
     id = json['id'];
     title = json['title'];
     price = json['price'];
-    specialPrice = json['special_price'];
+    specialPrice = json['special_price'].toString();
   }
 
   Map<String, dynamic> toJson() {
@@ -265,7 +265,7 @@ class BestsellerProducts {
     menuStatus = json['menu_status'];
     description = json['description'];
     price = json['price'];
-    specialPrice = json['special_price'];
+    specialPrice = json['special_price'].toString();
     availableFrom = json['available_from'];
     availableTo = json['available_to'];
     image = json['image'];
@@ -301,27 +301,28 @@ class BestsellerProducts {
   }
 }
 
-class Variations1 {
-  int? id;
-  String? title;
-  String? price;
-  String? specialPrice;
+// class Variations2 {
+//   int? id;
+//   String? title;
+//   String? price;
+//   String? specialPrice;
 
-  Variations1({this.id, this.title, this.price, this.specialPrice});
+//   Variations2({this.id, this.title, this.price, this.specialPrice});
 
-  Variations1.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    price = json['price'];
-    specialPrice = json['special_price'];
-  }
+//   Variations2.fromJson(Map<String, dynamic> json) {
+//     id = json['id'];
+//     title = json['title'];
+//     price = json['price'];
+//     specialPrice = json['special_price'];
+//   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['price'] = this.price;
-    data['special_price'] = this.specialPrice;
-    return data;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['id'] = this.id;
+//     data['title'] = this.title;
+//     data['price'] = this.price;
+//     data['special_price'] = this.specialPrice;
+//     return data;
+//   }
+// }
+
