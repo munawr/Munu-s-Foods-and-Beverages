@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Let's Shop",
+      title: "Munu's Foods & Beverages",
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),

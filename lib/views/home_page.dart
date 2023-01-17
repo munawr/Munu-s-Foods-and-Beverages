@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
           elevation: 0,
-          title: const Text("Let's Shop"),
+          title: const Text("Munu's Foods & Beverages"),
           backgroundColor: Colors.grey.withOpacity(.6)),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
